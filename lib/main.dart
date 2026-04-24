@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:moviemio_app/features/peliculas/presentation/pages/inicio_page.dart';
+//import 'package:moviemio_app/features/peliculas/presentation/pages/home_page.dart';
+import 'package:moviemio_app/features/peliculas/presentation/pages/welcome_page.dart';
 
 void main() => runApp(const MyApp(
   
@@ -13,7 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Moviemio App',
-      home: InicioPage(),
-    );
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const SplashScreen(), );
+      }
+    
   }
-}
