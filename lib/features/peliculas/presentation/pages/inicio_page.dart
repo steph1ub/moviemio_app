@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:moviemio_app/core/utils/app_colors.dart';
 import 'package:moviemio_app/features/peliculas/presentation/pages/favoritos_page.dart';
 import 'package:moviemio_app/features/peliculas/presentation/pages/home_page.dart';
+import 'package:moviemio_app/features/peliculas/presentation/pages/home_widgets.dart';
 import 'package:moviemio_app/features/peliculas/presentation/pages/perfil_page.dart';
 
 class InicioPage extends StatefulWidget {
@@ -16,6 +17,7 @@ class _InicioPageState extends State<InicioPage> {
   int _currentIndex = 0;
 
 List<Widget> pages = [
+HomeWidgets(),
 HomePage(),
 FavoritosPage(),
 PerfilPage(),
@@ -26,6 +28,8 @@ PerfilPage(),
 
     return Scaffold(
       extendBody: true,
+
+      //appbar---
       appBar: AppBar(
         toolbarHeight: 100,
         leadingWidth: 300,
@@ -44,13 +48,15 @@ PerfilPage(),
       icon: Icon(Icons.more_vert),
     ),],
     actionsIconTheme: IconThemeData(color: const Color.fromARGB(255, 255, 255, 255)),
-     
-     
-
-
 backgroundColor: const Color.fromARGB(255, 22, 146, 241),
 ),
+
+//appbar-----
+
+//---body
       body: pages[_currentIndex],
+
+      
 bottomNavigationBar: CurvedNavigationBar(
 backgroundColor: Colors.transparent,
 buttonBackgroundColor: AppColors.accentColor,

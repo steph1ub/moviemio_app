@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:moviemio_app/features/peliculas/presentation/pages/home_widgets.dart';
+import 'package:moviemio_app/features/peliculas/presentation/pages/home_api.dart';
+//import 'package:moviemio_app/features/peliculas/presentation/pages/home_widgets.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -7,7 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-body: Center(child: HomeWidgets()),
+body: Center(child: HomeApi(),),
 
 
     );
