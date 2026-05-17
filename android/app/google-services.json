@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "309940397515",
+    "project_id": "moviemio-app",
+    "storage_bucket": "moviemio-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309940397515:android:3ef8bfe6b233229bb3c24e",
+        "android_client_info": {
+          "package_name": "com.example.moviemio_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzIDcA8wWusgIfQ4vwZJWysAEUqAf2DWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
