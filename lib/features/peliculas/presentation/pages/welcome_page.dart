@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:moviemio_app/features/peliculas/presentation/pages/inicio_page.dart';
+//import 'package:moviemio_app/features/peliculas/presentation/pages/inicio_page.dart';
+import 'package:moviemio_app/features/peliculas/presentation/pages/login_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -55,6 +56,8 @@ class _SplashScreenState extends State<SplashScreen> {
                     fontWeight: FontWeight.bold,
 
                   ),
+
+                  
                 ),
                   Container(
                     height: 40,
@@ -82,7 +85,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     // Navegar a la página de inicio
                     Navigator.pushReplacement(
     context,
-    MaterialPageRoute(builder: (context) => const InicioPage()),
+    MaterialPageRoute(builder: (context) => const LoginPage()),
   );
                   },
                   child: const Text('Comenzar',

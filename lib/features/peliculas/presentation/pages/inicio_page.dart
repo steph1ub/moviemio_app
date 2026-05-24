@@ -1,13 +1,19 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:moviemio_app/core/utils/app_colors.dart';
-import 'package:moviemio_app/features/peliculas/presentation/pages/favoritos_page.dart';
+//import 'package:moviemio_app/features/peliculas/presentation/pages/favoritos_page.dart';
 import 'package:moviemio_app/features/peliculas/presentation/pages/home_page.dart';
-import 'package:moviemio_app/features/peliculas/presentation/pages/home_widgets.dart';
+//import 'package:moviemio_app/features/peliculas/presentation/pages/home_widgets.dart';
+import 'package:moviemio_app/features/peliculas/presentation/pages/login_page.dart';
 import 'package:moviemio_app/features/peliculas/presentation/pages/perfil_page.dart';
+//import 'package:moviemio_app/features/peliculas/presentation/pages/movie_details_page.dart';
+//import 'package:moviemio_app/features/peliculas/presentation/pages/perfil_page.dart';
 
 class InicioPage extends StatefulWidget {
   const InicioPage({super.key});
+
+
 
   @override
   State<InicioPage> createState() => _InicioPageState();
@@ -17,10 +23,11 @@ class _InicioPageState extends State<InicioPage> {
   int _currentIndex = 0;
 
 List<Widget> pages = [
-HomeWidgets(),
 HomePage(),
-FavoritosPage(),
-PerfilPage(),
+
+AdminMoviePanel()
+
+
 ];
 
   @override
@@ -28,6 +35,7 @@ PerfilPage(),
 
     return Scaffold(
       extendBody: true,
+      
 
       //appbar---
       appBar: AppBar(
@@ -39,6 +47,10 @@ PerfilPage(),
         ),
         
          actions: [
+           IconButton(
+            onPressed: () => logout(context),
+            icon: const Icon(Icons.logout),
+          ),  
     IconButton(
       onPressed: () {},
       icon: Icon(Icons.menu),
@@ -54,7 +66,10 @@ backgroundColor: const Color.fromARGB(255, 22, 146, 241),
 //appbar-----
 
 //---body
-      body: pages[_currentIndex],
+      body:
+      
+      pages[_currentIndex],
+
 
       
 bottomNavigationBar: CurvedNavigationBar(
@@ -65,7 +80,7 @@ index: _currentIndex,
 animationDuration: Duration(milliseconds: 300),
 items:const[
  Icon(Icons.home, size: 30),
- Icon(Icons.movie, size: 30),
+ //Icon(Icons.movie, size: 30),
  Icon(Icons.person, size: 30),
 
 ],
@@ -85,3 +100,17 @@ setState(() {
   }
 }
 
+   Future<void> logout(BuildContext context) async {
+    
+
+    await FirebaseAuth.instance.signOut();
+    
+  if (!context.mounted) return;
+    Navigator.pushReplacement(
+      
+      context,
+      MaterialPageRoute(
+        builder: (context) => const LoginPage(),
+      ),
+    );
+  }

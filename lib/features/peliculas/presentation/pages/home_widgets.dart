@@ -12,9 +12,7 @@ class HomeWidgets extends StatelessWidget {
     ],
   );
 
-Widget buildMainCard() {
-
-return Row(
+Widget buildMainCard() => Row(
 mainAxisAlignment: MainAxisAlignment.spaceBetween,
 children: [
 buildBoxCard('All' ),
@@ -23,8 +21,6 @@ buildBoxCard('Series')
 ],
 
 );
-
-}
 
 Widget buildBoxCard(String title) => Card(
 child: Container(
